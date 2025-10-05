@@ -79,45 +79,45 @@ The API will be available at `http://127.0.0.1:8000/`
 
 ### Authentication Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/v1/users/auth/register/` | User registration |
-| POST | `/api/v1/users/auth/login/` | User login |
-| POST | `/api/v1/users/auth/token/refresh/` | Refresh JWT token |
-| GET | `/api/v1/users/profile/` | Get user profile |
-| PUT/PATCH | `/api/v1/users/profile/` | Update user profile |
-| POST | `/api/v1/users/profile/change-password/` | Change password |
+| Method    | Endpoint                                  | Description         |
+|-----------|-------------------------------------------|---------------------|
+| POST      | `/api/v1/users/auth/register/`            | User registration   |
+| POST      | `/api/v1/users/auth/login/`               | User login          |
+| POS       | `/api/v1/users/auth/token/refresh/`       | Refresh JWT token   |
+| GET       | `/api/v1/users/profile/`                  | Get user profile    |
+| PUT/PATCH | `/api/v1/users/profile/`                  | Update user profile |
+| POST      | `/api/v1/users/profile/change-password/`  | Change password     |
 
 ### Patient Management
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/v1/health/patients/` | List user's patients |
-| POST | `/api/v1/health/patients/` | Create new patient |
-| GET | `/api/v1/health/patients/{id}/` | Get patient details |
-| PUT/PATCH | `/api/v1/health/patients/{id}/` | Update patient |
-| DELETE | `/api/v1/health/patients/{id}/` | Delete patient |
-| POST | `/api/v1/health/patients/{id}/assign_doctor/` | Assign doctor to patient |
-| DELETE | `/api/v1/health/patients/{id}/unassign_doctor/` | Unassign doctor from patient |
+| Method    | Endpoint                                        | Description                   |
+|-----------|-------------------------------------------------|-------------------------------|
+| GET       | `/api/v1/health/patients/`                      | List user's patients          |
+| POST      | `/api/v1/health/patients/`                      | Create new patient            |
+| GET       | `/api/v1/health/patients/{id}/`                 | Get patient details           |
+| PUT/PATCH | `/api/v1/health/patients/{id}/`                 | Update patient                |
+| DELETE    | `/api/v1/health/patients/{id}/`                 | Delete patient                |
+| POST      | `/api/v1/health/patients/{id}/assign_doctor/`   | Assign doctor to patient      |
+| DELETE    | `/api/v1/health/patients/{id}/unassign_doctor/` | Unassign doctor from patient  |
 
 ### Doctor Management
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/v1/health/doctors/` | List all doctors |
-| POST | `/api/v1/health/doctors/` | Create new doctor |
-| GET | `/api/v1/health/doctors/{id}/` | Get doctor details |
-| PUT/PATCH | `/api/v1/health/doctors/{id}/` | Update doctor |
-| DELETE | `/api/v1/health/doctors/{id}/` | Delete doctor |
-| GET | `/api/v1/health/doctors/{id}/patients/` | Get doctor's patients |
+| Method            | Endpoint                                    |Description             |
+|-------------------|---------------------------------------------|------------------------|
+| GET               |`/api/v1/health/doctors/`                    |List all doctors        |
+| POST              |`/api/v1/health/doctors/`                    |Create new doctor       |      
+| GET               |`/api/v1/health/doctors/{id}/`               |Get doctor details      |    
+| PUT/PATCH         | `/api/v1/health/doctors/{id}/`              | Update doctor          |
+| DELETE            | `/api/v1/health/doctors/{id}/`              | Delete doctor          |
+| GET               | `/api/v1/health/doctors/{id}/patients/`     | Get doctor's patients  |
 
 ### Patient-Doctor Relationships
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/v1/health/patient-doctors/` | List relationships |
-| POST | `/api/v1/health/patient-doctors/` | Create relationship |
-| DELETE | `/api/v1/health/patient-doctors/{id}/` | Delete relationship |
+| Method  | Endpoint                                | Description         |
+|---------|-----------------------------------------|---------------------|
+| GET     | `/api/v1/health/patient-doctors/`       | List relationships  |
+| POST    | `/api/v1/health/patient-doctors/`       | Create relationship |
+| DELETE  | `/api/v1/health/patient-doctors/{id}/`  | Delete relationship |
 
 ## API Documentation
 
@@ -289,4 +289,4 @@ This project is licensed under the MIT License.
 
 ## Support
 
-For support, please contact [your-email@example.com] or create an issue in the repository.
+For support, please contact [bhuvanshettyy@gmail.com] or create an issue in the repository.

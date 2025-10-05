@@ -15,7 +15,6 @@ User = get_user_model()
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
-    """Custom login view that returns user info along with tokens"""
     
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
@@ -31,7 +30,6 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
 
 class UserRegistrationView(generics.CreateAPIView):
-    """User registration endpoint"""
     queryset = User.objects.all()
     serializer_class = UserRegistrationSerializer
     permission_classes = [AllowAny]
@@ -48,7 +46,6 @@ class UserRegistrationView(generics.CreateAPIView):
 
 
 class UserProfileView(generics.RetrieveUpdateAPIView):
-    """Get and update user profile"""
     serializer_class = UserProfileSerializer
     permission_classes = [IsAuthenticated]
     
@@ -64,7 +61,6 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def change_password(request):
-    """Change user password"""
     serializer = ChangePasswordSerializer(data=request.data, context={'request': request})
     
     if serializer.is_valid():

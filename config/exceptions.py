@@ -9,9 +9,6 @@ logger = logging.getLogger(__name__)
 
 
 def custom_exception_handler(exc, context):
-    """
-    Custom exception handler that provides consistent error response format
-    """
     # Call REST framework's default exception handler first
     response = exception_handler(exc, context)
     
@@ -52,9 +49,6 @@ def custom_exception_handler(exc, context):
 
 
 def success_response(data=None, message="Success", status_code=status.HTTP_200_OK):
-    """
-    Helper function to create consistent success responses
-    """
     response_data = {
         'success': True,
         'message': message,

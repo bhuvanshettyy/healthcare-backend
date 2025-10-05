@@ -1,14 +1,19 @@
 """
-Development settings using SQLite for easier setup and testing.
+Development settings using PostgreSQL only (SQLite removed).
 """
 
 from .settings import *
+import os
 
-# Use SQLite for development
+# Use PostgreSQL for development
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB', 'healthcare_dev'),
+        'USER': os.getenv('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
 

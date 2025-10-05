@@ -4,6 +4,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 from .models import Patient, Doctor, PatientDoctor
 from .serializers import (
     PatientSerializer,
@@ -15,7 +17,7 @@ from .serializers import (
     AssignDoctorSerializer
 )
 
-
+ 
 class PatientViewSet(viewsets.ModelViewSet):
     """CRUD operations for patients"""
     queryset = Patient.objects.all()
@@ -47,6 +49,15 @@ class PatientViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
     
+    @swagger_auto_schema(
+        method='post',
+        request_body=AssignDoctorSerializer,
+        responses={
+            201: openapi.Response('Doctor assigned to patient'),
+            400: 'Bad Request',
+            404: 'Not Found'
+        }
+    )
     @action(detail=True, methods=['post'])
     def assign_doctor(self, request, pk=None):
         """Assign a doctor to a patient"""
@@ -72,6 +83,15 @@ class PatientViewSet(viewsets.ModelViewSet):
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    @swagger_auto_schema(
+        method='delete',
+        request_body=AssignDoctorSerializer,
+        responses={
+            200: 'OK',
+            400: 'Bad Request',
+            404: 'Not Found'
+        }
+    )
     @action(detail=True, methods=['delete'])
     def unassign_doctor(self, request, pk=None):
         """Unassign a doctor from a patient"""
