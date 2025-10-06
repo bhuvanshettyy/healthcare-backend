@@ -9,9 +9,9 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'healthcare_dev'),
-        'USER': os.getenv('POSTGRES_USER', 'postgres'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres'),
+        'NAME': os.getenv('POSTGRES_DB', 'healthcare_db'),
+        'USER': os.getenv('POSTGRES_USER', 'healthcare_user'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'bhuvan0000'),
         'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }

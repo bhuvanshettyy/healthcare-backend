@@ -17,7 +17,7 @@ os.makedirs(BASE_DIR / "logs", exist_ok=True)
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "iv@%hscw)_s3y(x=tism$gc%lp2*c)15m$pxt-3)i_-@_*mx=g")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True").lower() in ["1", "true", "yes"]
@@ -84,9 +84,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DB", "healthcare"),
-        "USER": os.getenv("POSTGRES_USER", "postgres"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
+        "NAME": os.getenv("POSTGRES_DB", "healthcare_db"),
+        "USER": os.getenv("POSTGRES_USER", "healthcare_user"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "bhuvan0000"),
         "HOST": os.getenv("POSTGRES_HOST", "localhost"),
         "PORT": os.getenv("POSTGRES_PORT", "5432"),
     }
